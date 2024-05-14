@@ -105,13 +105,13 @@
             height: 15px;
             width: 15px;
             margin: 0 2px;
-           
+
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease;
         }
 
-       
+
 
         /* Fading animation */
         .custom-fade {
@@ -160,12 +160,11 @@
         <div class="menu">
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Facilities</a></li>
-                <li><a href="">Amenities</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Google Map</a></li>
-                <li><a href="">Contact Us</a></li>
+                <li><a href="#about-us-intro">About Us</a></li>
+                <li><a href="#benefits-section">Facilities</a></li>
+                <li><a href="#ameneties-section">Amenities</a></li>
+                <li><a href="#map-section">Contact Us</a></li>
+
             </ul>
         </div>
         <!-- end menu -->
@@ -208,12 +207,11 @@
             <div class="menu">
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Facilities</a></li>
-                    <li><a href="">Amenities</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">Google Map</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="#about-us-intro">About Us</a></li>
+                    <li><a href="#benefits-section">Facilities</a></li>
+                    <li><a href="#ameneties-section">Amenities</a></li>
+                    <li><a href="#map-section">Contact Us</a></li>
+
                 </ul>
             </div>
             <!-- end menu -->
@@ -257,7 +255,7 @@
 
     </header><br>
     <!-- end slider -->
-    <section class="intro">
+    <section class="intro" id="about-us-intro">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -293,7 +291,7 @@
     <!-- end intro -->
 
     <!-- end logos -->
-    <section class="benefits">
+    <section class="benefits" id="benefits-section">
         <div class="container">
             <div class="row">
                 <div class="col-12 wow fadeInUp">
@@ -349,12 +347,12 @@
     </section>
 
     <!-- end benefits -->
-    <section class="photo-gallery">
+    <section class="photo-gallery" id="ameneties-section">
         <div class="container">
 
             <div class="col-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;text-align: center;">
-                <h4> Premier Business <span>Facility Features.</span></h4>
-                <h3>Have A Look To All Premier Facility We Provide</h3>
+                <h4> Premier Business <span>Amenities.</span></h4>
+                <h3>Have A Look To All Premier Ameneties We Provide</h3>
             </div><br>
             <div class="container">
                 <div class="mySlides">
@@ -423,7 +421,7 @@
 
     <!-- end property-calculator -->
 
-    <section class="contact">
+    <section class="contact" id="map-section">
         <div class="container">
 
             <!-- end row -->
@@ -534,18 +532,18 @@
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.10s">
                     <ul class="footer-menu">
                         <li><a href="#">HOME</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Facilities</a></li>
-                        <li><a href="#">Ameneties</a></li>
+                        <li><a href="#about-us-intro">About Us</a></li>
+                        <li><a href="#benefits-section">Facilities</a></li>
+
 
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.10s">
                     <ul class="footer-menu">
+                        <li><a href="#ameneties-section">Ameneties</a></li>
 
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Google Map</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#map-section">Contact Us</a></li>
+
                     </ul>
                 </div>
                 <!-- end col-2 -->
@@ -567,7 +565,7 @@
                     <!-- end contact-box -->
                 </div>
                 <!-- end col-4 -->
-                <div class="col-12"> <span class="copyright">© 2019 East Street | IT Park</span>
+                <div class="col-12"> <span class="copyright">© 2024 East Street | IT Park</span>
                     <span class="creation">Site created by <a href="#">MarcommEssentials</a></span>
                 </div>
                 <!-- end col-12 -->
@@ -686,6 +684,29 @@
             setTimeout(customShowSlides, 2000); // Change slide every 2 seconds
         }
     </script>
+    <script>
+        // Smooth scrolling for navigation menu links
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuLinks = document.querySelectorAll('.navbar ul li a');
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 
 
 </body>
